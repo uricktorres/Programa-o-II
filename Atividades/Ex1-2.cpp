@@ -1,27 +1,16 @@
 #include <iostream>
-#include <string>   // para std::string
-
+#include <string>
 using namespace std;
 
 int main() {
     string nome;
     int idade;
 
-    // Lê a idade com cin (entrada simples, sem espaços)
-    cout << "Digite sua idade: ";
-    cin >> idade;  // usa cin >> para ler um inteiro[web:21][web:24]
+    getline(cin, nome);   // lê o nome completo (com espaços)[web:18][web:29]
+    cin >> idade;         // lê a idade como inteiro[web:31]
 
-    // Limpa o '\n' que ficou no buffer antes de usar getline
-    cin.ignore(1000, '\n');  // evita que getline seja "pulado"[web:22][web:27]
-
-    // Lê o nome completo com getline (aceita espaços)
-    cout << "Digite seu nome completo: ";
-    getline(cin, nome);      // lê toda a linha, inclusive espaços[web:17][web:18][web:29]
-
-    // Saída organizada
-    cout << "\n=== Dados do usuário ===" << endl;
-    cout << "Nome : " << nome << endl;
-    cout << "Idade: " << idade << " anos" << endl;
+    cout << nome << endl;
+    cout << idade << endl;
 
     return 0;
 }
